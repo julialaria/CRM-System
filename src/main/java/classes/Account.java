@@ -7,13 +7,13 @@ public class Account {
 
     private static int ID_COUNTER = 1;
 
-    private int id;
-    private Industry industry;
-    private int employeeCount;
-    private String city;
-    private String country;
-    private List<Contact> contactList;
-    private List<Opportunity> opportunityList;
+    private final int id;
+    private final Industry industry;
+    private final int employeeCount;
+    private final String city;
+    private final String country;
+    private final List<Contact> contactList;
+    private final List<Opportunity> opportunityList;
 
     public Account(Industry industry, int employeeCount, String city, String country, List<Contact> contactList, List<Opportunity> opportunityList) {
         this.id = ID_COUNTER++;
@@ -29,56 +29,31 @@ public class Account {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Industry getIndustry() {
         return industry;
     }
 
-    public void setIndustry(Industry industry) {
-        this.industry = industry;
-    }
 
     public int getEmployeeCount() {
         return employeeCount;
     }
 
-    public void setEmployeeCount(int employeeCount) {
-        this.employeeCount = employeeCount;
-    }
 
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public String getCountry() {
         return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public List<Contact> getContactList() {
         return contactList;
     }
 
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
-    }
-
     public List<Opportunity> getOpportunityList() {
         return opportunityList;
-    }
-
-    public void setOpportunityList(List<Opportunity> opportunityList) {
-        this.opportunityList = opportunityList;
     }
 
     @Override
