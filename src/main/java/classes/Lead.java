@@ -10,7 +10,7 @@ public class Lead {
     private String email;
     private String companyName;
     private static int leadIdCounter = 1;
-    private static List<Lead> leadList = new ArrayList<>();
+    private static List<classes.Lead> leadList = new ArrayList<>();
 
     // When instantiating a Lead Object, it is automatically added to the List leadList.
     public Lead(String name, String phoneNumber, String email, String companyName) {
