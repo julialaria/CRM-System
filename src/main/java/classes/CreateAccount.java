@@ -33,7 +33,7 @@ public class CreateAccount {
         return scanner.nextLine();
     }
 
-    private static int getEmployees() {
+    public static int getEmployees() {
         System.out.println("Please specify your employee count");
         int employees = 0;
         boolean isValidemployees = false;
