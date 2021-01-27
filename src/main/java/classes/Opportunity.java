@@ -89,32 +89,16 @@ public class Opportunity {
         return id;
     }
 
-    public static void setId(int id) {
-        Opportunity.id = id;
-    }
-
     public Product getProduct() {
         return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public Contact getDecisionMaker() {
         return decisionMaker;
-    }
-
-    public void setDecisionMaker(Contact decisionMaker) {
-        this.decisionMaker = decisionMaker;
     }
 
     public Status getStatus() {

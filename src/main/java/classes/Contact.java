@@ -16,19 +16,11 @@ public class Contact extends Lead{
   public int getIdContact() {
     return idContact;
   }
-  
-  public void setIdContact() {
-    this.idContact = idContact;
-  }
 
   public Lead getLead() {
     return lead;
   }
 
-  public void setLead(Lead lead) {
-    this.lead = lead;
-  }
-  
   @Override
   public String toString() {
     return "Contact{" +
