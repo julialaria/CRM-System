@@ -1,5 +1,3 @@
-
-
 import classes.Contact;
 import classes.Lead;
 import classes.Opportunity;
@@ -39,6 +37,9 @@ public class Main {
                 String companyName = scan.nextLine();
                 Lead lead = new Lead(nameLead, phoneNumber, email, companyName);
                 leads.put(lead.getId(), lead);
+
+                order = whatNext();
+                orderSplit = order.split(" ");
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[1])){
                 System.out.println("Convert Lead to opportunity");
@@ -72,6 +73,8 @@ public class Main {
                 }
                 opportunities.put(opportunity.getId(), opportunity);
 
+                leads.remove(idLead);
+
                 order = whatNext();
                 orderSplit = order.split(" ");
             }
@@ -79,11 +82,11 @@ public class Main {
 
                 if (orderSplit[1].toUpperCase().equals("OPPORTUNITY")){
                     int idOportunity = Integer.parseInt(orderSplit[2]);
-                    opportunities.get(idOportunity).toString();
+                    System.out.println(opportunities.get(idOportunity).toString());
                 }
                 else if (orderSplit[1].toUpperCase().equals("LEAD")){
                     int idLead = Integer.parseInt(orderSplit[2]);
-                    leads.get(idLead).toString();
+                    System.out.println(leads.get(idLead).toString());
                 } else {
                     System.out.println("Command not found");
                 }
@@ -93,7 +96,7 @@ public class Main {
             }
             else if (order.toUpperCase().equals(keyPhrases[3])){
                 for (int idLead : leads.keySet()){
-                    leads.get(idLead).toString();
+                    System.out.println(leads.get(idLead).toString());
                 }
                 order = whatNext();
                 orderSplit = order.split(" ");
@@ -119,7 +122,7 @@ public class Main {
         }}
 
     public static String whatNext(){
-        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT", "LOOKUP", "SHOW", "CLOSE-LOST", "CLOSE-WON"};
+        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT + ID", "LOOKUP LEAD + ID", "LOOKUP OPPORTUNITY + ID", "SHOW LEADS", "CLOSE-LOST + ID", "CLOSE-WON + ID"};
         Scanner scan = new Scanner(System.in);
         System.out.println("What do you want to do next? " + Arrays.toString(keyPhrases));
         System.out.println("(Write 'EXIT' to close terminal)");
