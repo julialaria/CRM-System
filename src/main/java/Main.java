@@ -36,7 +36,7 @@ public class Main {
                         Lead.isPhoneNumberValid(phoneNumber);
                         break;
                     } catch(IllegalArgumentException e){
-                        System.err.println("Phone number not valid, introduce it with the following format: " +
+                        System.err.println(ConsoleColors.RED +"Phone number not valid, introduce it with the following format: " +
                                 "612345678 / 612-345-678 / 612 345 678 / 612 34 56 78");
                     }
                 }
@@ -48,7 +48,7 @@ public class Main {
                         Lead.isEmailValid(email);
                         break;
                     }catch (IllegalArgumentException e){
-                        System.err.println("Introduce a valid email address");
+                        System.err.println(ConsoleColors.RED +"Introduce a valid email address");
                     }
 
                 }
@@ -74,7 +74,7 @@ public class Main {
                 System.out.println("Please specify your interests: (Options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
                 String typeTruck = scan.nextLine();
                 while (!typeTruck.toUpperCase().equals("HYBRID TRUCK") && !typeTruck.toUpperCase().equals("FLATBED TRUCK") && !typeTruck.toUpperCase().equals("BOX TRUCK")){
-                    System.out.println("NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
+                    System.out.println("ConsoleColors.RED + NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
                     typeTruck = scan.nextLine();
                 }
 
@@ -97,7 +97,7 @@ public class Main {
 
                 leads.remove(idLead);}
                 else{
-                    System.out.println("This Lead id is not valid, please check Leads with command 'SHOW LEADS'");
+                    System.out.println(ConsoleColors.RED +"This Lead id is not valid, please check Leads with command 'SHOW LEADS'");
                 }
 
             }
@@ -106,7 +106,7 @@ public class Main {
                     if (opportunities.containsKey(idOportunity)){
                     System.out.println(opportunities.get(idOportunity).toString());}
                     else {
-                        System.out.println("Opportunity Id is not valid");
+                        System.out.println(ConsoleColors.RED +"Opportunity Id is not valid");
                     }
             }
 
@@ -115,7 +115,7 @@ public class Main {
                     if (leads.containsKey(idLead)){
                     System.out.println(leads.get(idLead).toString());}
                     else {
-                        System.out.println("Lead Id is not valid");
+                        System.out.println(ConsoleColors.RED +"Lead Id is not valid");
                     }
             }
 
@@ -130,7 +130,7 @@ public class Main {
                 if (opportunities.containsKey(idOpportunity)){
                 opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);}
                 else {
-                    System.out.println("Opportunity id is not valid");
+                    System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
                 }
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[6])){
@@ -138,11 +138,11 @@ public class Main {
                 if (opportunities.containsKey(idOpportunity)){
                 opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);}
                 else {
-                    System.out.println("Opportunity id is not valid");
+                    System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
                 }
             }
             else {
-                System.out.println("COMAND NOT FOUND");
+                System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
             }
             order = whatNext();
             orderSplit = order.split(" ");
