@@ -8,32 +8,32 @@ import static java.util.List.of;
 
 public class CreateAccount {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static Account create(Contact contact, Opportunity opportunity) {
         System.out.println("We are going to create an Account");
 
-        Industry industry = enterCorrectIndustry();
-        int employees = getEmployees();
+        Industry industry = enterCorrectIndustry(sc);
+        int employees = getEmployees(sc);
 
-        String city = getCity();
-        scanner.nextLine();
-        String country = getCountry();
+        String city = getCity(sc);
+        sc.nextLine();
+        String country = getCountry(sc);
 
         return new Account(industry, employees, city, country, of(contact), of(opportunity));
     }
 
-    private static String getCountry() {
+    public static String getCountry(Scanner scanner) {
         System.out.println("Please specify your country");
         return scanner.nextLine();
     }
 
-    private static String getCity() {
+    public static String getCity(Scanner scanner) {
         System.out.println("Please specify your city");
         return scanner.nextLine();
     }
 
-    public static int getEmployees() {
+    public static int getEmployees(Scanner scanner) {
         System.out.println("Please specify your employee count");
         int employees = 0;
         boolean isValidemployees = false;
@@ -50,7 +50,7 @@ public class CreateAccount {
         return employees;
     }
 
-    public static Industry enterCorrectIndustry() {
+    public static Industry enterCorrectIndustry(Scanner scanner) {
         System.out.println("Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
         String typeAccount = scanner.nextLine();
         while (!isCorrect(typeAccount)) {
