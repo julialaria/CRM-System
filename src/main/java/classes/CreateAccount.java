@@ -17,7 +17,6 @@ public class CreateAccount {
         int employees = getEmployees(sc);
 
         String city = getCity(sc);
-        sc.nextLine();
         String country = getCountry(sc);
 
         return new Account(industry, employees, city, country, of(contact), of(opportunity));
@@ -39,7 +38,7 @@ public class CreateAccount {
         boolean isValidemployees = false;
         while (!isValidemployees) {
             try {
-                employees = scanner.nextInt();
+                employees = Integer.parseInt(scanner.nextLine());
                 isValidemployees = isValidEmployees(employees);
             } catch (Exception e) {
             }
