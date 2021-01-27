@@ -52,14 +52,14 @@ public class CreateAccount {
     public static Industry enterCorrectIndustry(Scanner scanner) {
         System.out.println("Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
         String typeAccount = scanner.nextLine();
-        while (!isCorrect(typeAccount)) {
+        while (!isCorrectIndustry(typeAccount)) {
             typeAccount = scanner.nextLine();
         }
         return Industry.valueOf(typeAccount);
 
     }
 
-    public static boolean isCorrect(String test) {
+    public static boolean isCorrectIndustry(String test) {
         for (Industry industry : Industry.values()) {
             if (industry.name().equals(test)) {
                 return true;

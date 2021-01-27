@@ -61,4 +61,10 @@ class CreateAccountTest {
 
         assertEquals("España", country);
     }
+
+    @Test
+    void incorrect_get_employees() {
+        assertFalse(isValidEmployees(-5));
+        assertTrue(isValidEmployees(15));
+    }
 }
