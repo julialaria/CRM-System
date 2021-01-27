@@ -1,6 +1,7 @@
 import classes.*;
 import enums.Product;
 import enums.Status;
+import styles.ConsoleColors;
 
 import java.util.*;
 
@@ -10,11 +11,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please write a order: ");
+        System.out.println(ConsoleColors.BLUE_BACKGROUND + "\n WELCOME TO CRM-SYSTEM \n");
+        System.out.println(ConsoleColors.BLUE + "Please write a order: ");
         String order = scan.nextLine();
         String[] orderSplit = order.split(" ");
 
-        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT", "LOOKUP", "SHOW LEADS", "CLOSE-LOST", "CLOSE-WON"};
+        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT", "LOOKUP OPPORTUNITY", "LOOKUP LEAD", "SHOW LEADS", "CLOSE-LOST", "CLOSE-WON"};
         Map<Integer, Lead> leads = new HashMap<>();
         Map<Integer, Contact> contacts = new HashMap<>();
         Map<Integer, Opportunity> opportunities = new HashMap<>();
@@ -60,6 +62,7 @@ public class Main {
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[1])){
                 System.out.println("Convert Lead to opportunity");
                 int idLead = Integer.parseInt(orderSplit[1]);
+                if (leads.containsKey(idLead)){
                 String name = leads.get(idLead).getName();
                 String phoneNumber = leads.get(idLead).getPhoneNumber();
                 String email = leads.get(idLead).getEmail();
@@ -92,35 +95,51 @@ public class Main {
                 Account account = CreateAccount.create(contact,opportunity);
                 accounts.put(account.getId(),account);
 
-                leads.remove(idLead);
+                leads.remove(idLead);}
+                else{
+                    System.out.println("This Lead id is not valid, please check Leads with command 'SHOW LEADS'");
+                }
 
             }
-            else if (orderSplit[0].toUpperCase().equals(keyPhrases[2])){
-
-                if (orderSplit[1].toUpperCase().equals("OPPORTUNITY")){
+            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[2])){
                     int idOportunity = Integer.parseInt(orderSplit[2]);
-                    System.out.println(opportunities.get(idOportunity).toString());
-                }
-                else if (orderSplit[1].toUpperCase().equals("LEAD")){
-                    int idLead = Integer.parseInt(orderSplit[2]);
-                    System.out.println(leads.get(idLead).toString());
-                } else {
-                    System.out.println("Command not found");
-                }
+                    if (opportunities.containsKey(idOportunity)){
+                    System.out.println(opportunities.get(idOportunity).toString());}
+                    else {
+                        System.out.println("Opportunity Id is not valid");
+                    }
             }
-            else if (order.toUpperCase().equals(keyPhrases[3])){
+
+            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[3])){
+                    int idLead = Integer.parseInt(orderSplit[2]);
+                    if (leads.containsKey(idLead)){
+                    System.out.println(leads.get(idLead).toString());}
+                    else {
+                        System.out.println("Lead Id is not valid");
+                    }
+            }
+
+            else if (order.toUpperCase().equals(keyPhrases[4])){
                 for (int idLead : leads.keySet()){
                     System.out.println(leads.get(idLead).toString());
                 }
-            }
-            else if (orderSplit[0].toUpperCase().equals(keyPhrases[4])){
-                int idOpportunity = Integer.parseInt(orderSplit[1]);
-                opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);
 
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[5])){
                 int idOpportunity = Integer.parseInt(orderSplit[1]);
-                opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);
+                if (opportunities.containsKey(idOpportunity)){
+                opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);}
+                else {
+                    System.out.println("Opportunity id is not valid");
+                }
+            }
+            else if (orderSplit[0].toUpperCase().equals(keyPhrases[6])){
+                int idOpportunity = Integer.parseInt(orderSplit[1]);
+                if (opportunities.containsKey(idOpportunity)){
+                opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);}
+                else {
+                    System.out.println("Opportunity id is not valid");
+                }
             }
             else {
                 System.out.println("COMAND NOT FOUND");

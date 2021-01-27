@@ -2,6 +2,7 @@ package classes;
 
 import enums.Industry;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import static java.util.List.of;
@@ -52,7 +53,7 @@ public class CreateAccount {
     public static Industry enterCorrectIndustry(Scanner scanner) {
         System.out.println("Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
         String typeAccount = scanner.nextLine();
-        while (!isCorrectIndustry(typeAccount)) {
+        while (!isCorrectIndustry(typeAccount)){
             typeAccount = scanner.nextLine();
         }
         return Industry.valueOf(typeAccount);
