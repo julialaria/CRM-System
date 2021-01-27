@@ -23,19 +23,18 @@ class LeadTest {
     }
 
     @Test
-    void isEmailAddressValid_validEmail_True() {
-        assertTrue(EmailValidator.getInstance().isValid("javier123@gmail.com"));
-        assertTrue(EmailValidator.getInstance().isValid("javier1d23@hotmail.com"));
-        assertTrue(EmailValidator.getInstance().isValid("javier1d23@hotmail.es"));
+    void isEmailValid_validEmail_True() {
+        assertTrue(Lead.isEmailValid("javier123@gmail.com"));
+        assertTrue(Lead.isEmailValid("javier1d23@hotmail.com"));
+        assertTrue(Lead.isEmailValid("javier1d23@hotmail.es"));
     }
 
     @Test
-    void isEmailAddressValid_invalidEmail_False() {
-        assertFalse(EmailValidator.getInstance().isValid("javier123@@mail.com"));
-        assertFalse(EmailValidator.getInstance().isValid("javier123@mail..es"));
-        assertFalse(EmailValidator.getInstance().isValid("javier123gmail.com"));
-        assertFalse(EmailValidator.getInstance().isValid("javier123@gmail."));
-
+    void isEmailValid_invalidEmail_IllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,()->Lead.isEmailValid("javier123@@mail.com"));
+        assertThrows(IllegalArgumentException.class,()->Lead.isEmailValid("javier123@mail..es"));
+        assertThrows(IllegalArgumentException.class,()->Lead.isEmailValid("javier123gmail.com"));
+        assertThrows(IllegalArgumentException.class,()->Lead.isEmailValid("javier123@gmail."));
     }
 
 
