@@ -23,6 +23,7 @@ public class Main {
         Map<Integer, Account> accounts = new HashMap<>();
 
         while (!order.toUpperCase().equals("EXIT")){
+            if(orderSplit.length>1){
             if((order.toUpperCase().equals(keyPhrases[0]))){
 
                 System.out.println("Introduce name of the Lead");
@@ -143,6 +144,9 @@ public class Main {
             }
             else {
                 System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
+            }}
+            else{
+                System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
             }
             order = whatNext();
             orderSplit = order.split(" ");
@@ -152,8 +156,8 @@ public class Main {
     public static String whatNext(){
         String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT + ID", "LOOKUP LEAD + ID", "LOOKUP OPPORTUNITY + ID", "SHOW LEADS", "CLOSE-LOST + ID", "CLOSE-WON + ID"};
         Scanner scan = new Scanner(System.in);
-        System.out.println("What do you want to do next? " + Arrays.toString(keyPhrases));
-        System.out.println("(Write 'EXIT' to close terminal)");
+        System.out.println(ConsoleColors.BLUE +"What do you want to do next? " + Arrays.toString(keyPhrases));
+        System.out.println(ConsoleColors.GREEN + "(Write 'EXIT' to close terminal)");
         String order = scan.nextLine();
         String[] orderSplit = order.split(" ");
         return order;
