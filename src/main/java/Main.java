@@ -56,8 +56,6 @@ public class Main {
                 Lead lead = new Lead(nameLead, phoneNumber, email, companyName);
                 leads.put(lead.getId(), lead);
 
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[1])){
                 System.out.println("Convert Lead to opportunity");
@@ -96,8 +94,6 @@ public class Main {
 
                 leads.remove(idLead);
 
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[2])){
 
@@ -111,36 +107,28 @@ public class Main {
                 } else {
                     System.out.println("Command not found");
                 }
-
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
             else if (order.toUpperCase().equals(keyPhrases[3])){
                 for (int idLead : leads.keySet()){
                     System.out.println(leads.get(idLead).toString());
                 }
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[4])){
                 int idOpportunity = Integer.parseInt(orderSplit[1]);
                 opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);
-                order = whatNext();
-                orderSplit = order.split(" ");
+
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[5])){
                 int idOpportunity = Integer.parseInt(orderSplit[1]);
                 opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
             else {
                 System.out.println("COMAND NOT FOUND");
-                order = whatNext();
-                orderSplit = order.split(" ");
             }
-
-        }}
+            order = whatNext();
+            orderSplit = order.split(" ");
+        }
+    }
 
     public static String whatNext(){
         String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT + ID", "LOOKUP LEAD + ID", "LOOKUP OPPORTUNITY + ID", "SHOW LEADS", "CLOSE-LOST + ID", "CLOSE-WON + ID"};
