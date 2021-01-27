@@ -1,13 +1,8 @@
-import classes.Contact;
-import classes.Lead;
-import classes.Opportunity;
+import classes.*;
 import enums.Product;
 import enums.Status;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -23,6 +18,7 @@ public class Main {
         Map<Integer, Lead> leads = new HashMap<>();
         Map<Integer, Contact> contacts = new HashMap<>();
         Map<Integer, Opportunity> opportunities = new HashMap<>();
+        Map<Integer, Account> accounts = new HashMap<>();
 
         while (!order.toUpperCase().equals("EXIT")){
             if((order.toUpperCase().equals(keyPhrases[0]))){
@@ -94,6 +90,9 @@ public class Main {
                     opportunity = new Opportunity(Product.BOX, trucksNum, contact);
                 }
                 opportunities.put(opportunity.getId(), opportunity);
+
+                Account account = CreateAccount.create(contact,opportunity);
+                accounts.put(account.getId(),account);
 
                 leads.remove(idLead);
 
