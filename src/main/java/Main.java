@@ -29,10 +29,32 @@ public class Main {
 
                 System.out.println("Introduce name of the Lead");
                 String nameLead = scan.nextLine();
-                System.out.println("Introduce phone number of the Lead");
-                String phoneNumber = scan.nextLine();
-                System.out.println("Introduce email of the Lead");
-                String email = scan.nextLine();
+                String phoneNumber;
+                String email;
+                while(true){
+                    System.out.println("Introduce phone number of the Lead");
+                    phoneNumber = scan.nextLine();
+                    try{
+                        Lead.isPhoneNumberValid(phoneNumber);
+                        break;
+                    } catch(IllegalArgumentException e){
+                        System.err.println("Phone number not valid, introduce it with the following format: " +
+                                "612345678 / 612-345-678 / 612 345 678 / 612 34 56 78");
+                    }
+                }
+
+                while(true){
+                    System.out.println("Introduce email of the Lead");
+                    email = scan.nextLine();
+                    try{
+                        Lead.isEmailValid(email);
+                        break;
+                    }catch (IllegalArgumentException e){
+                        System.err.println("Introduce a valid email address");
+                    }
+
+                }
+
                 System.out.println("Introduce company name of the Lead");
                 String companyName = scan.nextLine();
                 Lead lead = new Lead(nameLead, phoneNumber, email, companyName);
