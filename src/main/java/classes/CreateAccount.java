@@ -45,7 +45,7 @@ public class CreateAccount {
         boolean isValid = false;
 
         while(!isValid){
-            System.out.println(ConsoleColors.BLUE+"Please specify your Country");
+            System.out.println(ConsoleColors.BLUE+"Please specify your city");
             city = scanner.nextLine();
             isValid = city.matches("[a-zA-Z]+");
             if(!isValid){
