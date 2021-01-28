@@ -79,12 +79,11 @@ public class Lead {
 
     @Override
     public String toString() {
-        return "Lead{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", companyName='" + companyName + '\'' +
+        return "Lead with id = " + id +
+                " whose name is '" + name + '\'' +
+                " has the following phone number '" + phoneNumber + '\'' +
+                ", email address'" + email + '\'' +
+                " and belongs to the company '" + companyName + '\'' +
                 '}';
     }
 }
