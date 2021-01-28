@@ -96,7 +96,7 @@ public class MainMethods {
     public static void closeLost(String[] orderSplit, Map<Integer, Opportunity> opportunities){
         int idOpportunity = Integer.parseInt(orderSplit[1]);
         if (opportunities.containsKey(idOpportunity)){
-            System.out.println(ConsoleColors.BLUE +"Opportunity with id"+idOpportunity+"changed to close-lost");
+            System.out.println(ConsoleColors.BLUE +"Opportunity with id "+idOpportunity+" changed to close-lost");
             opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);}
         else {
             System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
@@ -106,7 +106,7 @@ public class MainMethods {
     public static void closeWon(String[] orderSplit, Map<Integer, Opportunity> opportunities){
         int idOpportunity = Integer.parseInt(orderSplit[1]);
         if (opportunities.containsKey(idOpportunity)){
-            System.out.println(ConsoleColors.BLUE +"Opportunity with id"+idOpportunity+"changed to close-won");
+            System.out.println(ConsoleColors.BLUE +"Opportunity with id "+idOpportunity+" changed to close-won");
             opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);}
         else {
             System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
