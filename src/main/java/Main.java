@@ -1,5 +1,4 @@
 import classes.*;
-import enums.Product;
 import styles.ConsoleColors;
 
 import java.util.*;
