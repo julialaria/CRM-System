@@ -31,22 +31,27 @@ public class Main {
 
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[1])){
+                try{
+                    int idLead = Integer.parseInt(orderSplit[1]);
 
-                int idLead = Integer.parseInt(orderSplit[1]);
-                if (leads.containsKey(idLead)){
+                    if (leads.containsKey(idLead) && orderSplit.length == 2){
 
-                    Contact contact = mainMethods.convertLeadtoOpportunity(leads, idLead);
-                    contacts.put(contact.getId(), contact);
+                        Contact contact = mainMethods.convertLeadtoOpportunity(leads, idLead);
+                        contacts.put(contact.getId(), contact);
 
-                    Opportunity opportunity = mainMethods.convertLeadtoLead(contact);
-                    opportunities.put(opportunity.getId(), opportunity);
+                        Opportunity opportunity = mainMethods.convertLeadtoLead(contact);
+                        opportunities.put(opportunity.getId(), opportunity);
 
-                    Account account = CreateAccount.create(contact,opportunity);
-                    accounts.put(account.getId(),account);
+                        Account account = CreateAccount.create(contact,opportunity);
+                        accounts.put(account.getId(),account);
 
-                    leads.remove(idLead);}
-                else{
-                    System.out.println(ConsoleColors.RED +"This Lead id is not valid, please check Leads with command 'SHOW LEADS'");
+                        leads.remove(idLead);}
+
+                    else{
+                        System.out.println(ConsoleColors.RED +"This Lead id is not valid, please check Leads with command 'SHOW LEADS'");
+                    }
+                }catch (NumberFormatException ex) {
+                    System.err.println(ConsoleColors.RED +"Introduce a valid Lead id");
                 }
 
             }

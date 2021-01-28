@@ -62,7 +62,7 @@ public class mainMethods {
         Scanner scan = new Scanner(System.in);
         String typeTruck = scan.nextLine();
         while (!typeTruck.toUpperCase().equals("HYBRID TRUCK") && !typeTruck.toUpperCase().equals("FLATBED TRUCK") && !typeTruck.toUpperCase().equals("BOX TRUCK")){
-            System.out.println("ConsoleColors.RED + NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
+            System.out.println(ConsoleColors.RED + "NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
             typeTruck = scan.nextLine();
         }
 
