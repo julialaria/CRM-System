@@ -29,11 +29,11 @@ public class CreateAccount {
         boolean isValid = false;
 
         while(!isValid){
-            System.out.println(ConsoleColors.BLUE+"Please specify your city");
+            System.out.println(ConsoleColors.BLUE+"Please specify your country");
             country = scanner.nextLine();
             isValid = country.matches("[a-zA-Z]+");
             if(!isValid){
-                System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
+                System.out.println(ConsoleColors.RED+"The country must be written and can not have numbers");
             }
         }
 
