@@ -25,12 +25,10 @@ public class Opportunity {
     @Override
     public String toString() {
 
-        return "Opportunity{" +
-                "product=" + product +
+        return "Opportunity with product " + product +
                 ", quantity=" + quantity +
-                ", decisionMaker=" + decisionMaker.getIdContact() +
-                ", status=" + status +
-                '}';
+                ", decision maker contact id is " + decisionMaker.getIdContact() +
+                " and its status is " + status ;
     }
 
     @Override

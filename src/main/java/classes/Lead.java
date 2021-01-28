@@ -83,8 +83,7 @@ public class Lead {
                 " whose name is '" + name + '\'' +
                 " has the following phone number '" + phoneNumber + '\'' +
                 ", email address'" + email + '\'' +
-                " and belongs to the company '" + companyName + '\'' +
-                '}';
+                " and belongs to the company '" + companyName ;
     }
 
     public String shortPrint() {

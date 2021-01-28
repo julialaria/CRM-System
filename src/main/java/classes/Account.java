@@ -59,14 +59,12 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", industry=" + industry +
-                ", employeeCount=" + employeeCount +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                ", contactList=" + contactList +
-                ", opportunityList=" + opportunityList +
-                '}';
+        return "Account with id "  + id +
+                " belongs to " + industry +
+                " industry, has " + employeeCount +
+                " employees, is based on '" + city + '\'' +
+                ", '" + country + '\'' +
+                " with contact List " + contactList +
+                " and opportunity List " + opportunityList ;
     }
 }

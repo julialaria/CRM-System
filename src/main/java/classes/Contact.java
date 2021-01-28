@@ -23,10 +23,8 @@ public class Contact extends Lead {
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "idContact=" + idContact +
-                ", lead=" + lead +
-                '}';
+        return "Contact with id" + idContact +
+                ", corresponds to lead: " + lead ;
     }
 
 }
