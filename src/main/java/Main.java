@@ -1,6 +1,5 @@
 import classes.*;
 import enums.Product;
-import enums.Status;
 import styles.ConsoleColors;
 
 import java.util.*;
@@ -26,7 +25,7 @@ public class Main {
             if(orderSplit.length>1){
             if((order.toUpperCase().equals(keyPhrases[0]))){
 
-                Lead lead = mainMethods.newLead();
+                Lead lead = MainMethods.newLead();
                 leads.put(lead.getId(), lead);
 
             }
@@ -36,10 +35,10 @@ public class Main {
 
                     if (leads.containsKey(idLead) && orderSplit.length == 2){
 
-                        Contact contact = mainMethods.convertLeadtoOpportunity(leads, idLead);
+                        Contact contact = MainMethods.convertLeadtoOpportunity(leads, idLead);
                         contacts.put(contact.getId(), contact);
 
-                        Opportunity opportunity = mainMethods.convertLeadtoLead(contact);
+                        Opportunity opportunity = MainMethods.convertLeadtoLead(contact);
                         opportunities.put(opportunity.getId(), opportunity);
 
                         Account account = CreateAccount.create(contact,opportunity);
@@ -57,26 +56,26 @@ public class Main {
             }
             else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[2])&&orderSplit.length>2){
 
-                mainMethods.lookupOpportunity(orderSplit, opportunities);
+                MainMethods.lookupOpportunity(orderSplit, opportunities);
             }
 
             else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[3])&&orderSplit.length>2){
 
-                mainMethods.lookupLead(orderSplit, leads);
+                MainMethods.lookupLead(orderSplit, leads);
             }
 
             else if (order.toUpperCase().equals(keyPhrases[4])){
 
-                mainMethods.showLeads(leads);
+                MainMethods.showLeads(leads);
 
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[5])){
 
-                mainMethods.closeLost(orderSplit, opportunities);
+                MainMethods.closeLost(orderSplit, opportunities);
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[6])){
 
-                mainMethods.closeWon(orderSplit, opportunities);
+                MainMethods.closeWon(orderSplit, opportunities);
             }
             else {
                 System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
@@ -84,7 +83,7 @@ public class Main {
             else{
                 System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
             }
-            order = mainMethods.whatNext();
+            order = MainMethods.whatNext();
             orderSplit = order.split(" ");
         }
     }
