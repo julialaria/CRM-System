@@ -11,13 +11,55 @@ import java.util.Scanner;
 public class mainMethods {
 
     public static Lead newLead(){
-        System.out.println("Introduce name of the Lead");
+
         Scanner scan = new Scanner(System.in);
-        String nameLead = scan.nextLine();
+        String nameLead="";
         String phoneNumber;
         String email;
+        boolean aux = true;
+
+        while(aux){
+            System.out.println(ConsoleColors.BLUE+"Introduce name of the Lead");
+            nameLead = scan.nextLine();
+            aux = false;
+
+            if (nameLead.indexOf('1')!=-1 || nameLead==""){
+                aux=true;
+            }
+            if (nameLead.indexOf('2')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('3')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('4')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('5')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('6')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('7')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('8')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('9')!=-1){
+                aux=true;
+            }
+            if (nameLead.indexOf('0')!=-1){
+                aux=true;
+            }
+            if (aux==true){
+                System.out.println(ConsoleColors.RED+"The name of the Lead must be written and can not have numbers");
+            }
+        }
+
         while(true){
-            System.out.println("Introduce phone number of the Lead");
+            System.out.println(ConsoleColors.BLUE+ "Introduce phone number of the Lead");
             phoneNumber = scan.nextLine();
             try{
                 Lead.isPhoneNumberValid(phoneNumber);
@@ -29,7 +71,7 @@ public class mainMethods {
         }
 
         while(true){
-            System.out.println("Introduce email of the Lead");
+            System.out.println(ConsoleColors.BLUE+"Introduce email of the Lead");
             email = scan.nextLine();
             try{
                 Lead.isEmailValid(email);
@@ -40,7 +82,7 @@ public class mainMethods {
 
         }
 
-        System.out.println("Introduce company name of the Lead");
+        System.out.println(ConsoleColors.BLUE+"Introduce company name of the Lead");
         String companyName = scan.nextLine();
         Lead lead = new Lead(nameLead, phoneNumber, email, companyName);
         return lead;
@@ -58,17 +100,28 @@ public class mainMethods {
     }
 
     public static Opportunity convertLeadtoLead(Contact contact){
-        System.out.println("Please specify your interests: (Options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
+        System.out.println(ConsoleColors.BLUE+"Please specify your interests: (Options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
         Scanner scan = new Scanner(System.in);
         String typeTruck = scan.nextLine();
         while (!typeTruck.toUpperCase().equals("HYBRID TRUCK") && !typeTruck.toUpperCase().equals("FLATBED TRUCK") && !typeTruck.toUpperCase().equals("BOX TRUCK")){
             System.out.println(ConsoleColors.RED + "NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
             typeTruck = scan.nextLine();
         }
-
-        System.out.println("Please specify quantity of trucks you need: (Introduce a number)");
-        String trucksQuantity = scan.nextLine();
-        int trucksNum = Integer.parseInt(trucksQuantity);
+        int trucksNum;
+        while(true){
+            System.out.println(ConsoleColors.BLUE+"Please specify quantity of trucks you need: (Introduce a number)");
+            try{
+                String trucksQuantity = scan.nextLine();
+                trucksNum = Integer.parseInt(trucksQuantity);
+                if (trucksNum>=0){
+                    break;
+                }else{
+                    System.out.println(ConsoleColors.RED+"Please introduce a valid number");
+                }
+            }catch(IllegalArgumentException e){
+                System.out.println(ConsoleColors.RED + "Please introduce a valid number");
+            }
+        }
 
         Opportunity opportunity;
         if (typeTruck.equals("HYBRID TRUCK")){
@@ -80,7 +133,6 @@ public class mainMethods {
         }
         return opportunity;
     }
-
 
     public static void lookupOpportunity(String[] orderSplit, Map<Integer, Opportunity> opportunities){
         int idOportunity = Integer.parseInt(orderSplit[2]);
