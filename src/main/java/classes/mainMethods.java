@@ -4,6 +4,7 @@ import enums.Product;
 import enums.Status;
 import styles.ConsoleColors;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -120,5 +121,15 @@ public class mainMethods {
         else {
             System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
         }
+    }
+
+    public static String whatNext(){
+        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT + ID", "LOOKUP LEAD + ID", "LOOKUP OPPORTUNITY + ID", "SHOW LEADS", "CLOSE-LOST + ID", "CLOSE-WON + ID"};
+        Scanner scan = new Scanner(System.in);
+        System.out.println(ConsoleColors.BLUE +"What do you want to do next? " + Arrays.toString(keyPhrases));
+        System.out.println(ConsoleColors.GREEN + "(Write 'EXIT' to close terminal)");
+        String order = scan.nextLine();
+        String[] orderSplit = order.split(" ");
+        return order;
     }
 }

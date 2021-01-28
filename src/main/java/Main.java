@@ -26,38 +26,6 @@ public class Main {
             if(orderSplit.length>1){
             if((order.toUpperCase().equals(keyPhrases[0]))){
 
-                /*System.out.println("Introduce name of the Lead");
-                String nameLead = scan.nextLine();
-                String phoneNumber;
-                String email;
-                while(true){
-                    System.out.println("Introduce phone number of the Lead");
-                    phoneNumber = scan.nextLine();
-                    try{
-                        Lead.isPhoneNumberValid(phoneNumber);
-                        break;
-                    } catch(IllegalArgumentException e){
-                        System.err.println(ConsoleColors.RED +"Phone number not valid, introduce it with the following format: " +
-                                "612345678 / 612-345-678 / 612 345 678 / 612 34 56 78");
-                    }
-                }
-
-                while(true){
-                    System.out.println("Introduce email of the Lead");
-                    email = scan.nextLine();
-                    try{
-                        Lead.isEmailValid(email);
-                        break;
-                    }catch (IllegalArgumentException e){
-                        System.err.println(ConsoleColors.RED +"Introduce a valid email address");
-                    }
-
-                }
-
-                System.out.println("Introduce company name of the Lead");
-                String companyName = scan.nextLine();
-                Lead lead = new Lead(nameLead, phoneNumber, email, companyName);*/
-
                 Lead lead = mainMethods.newLead();
                 leads.put(lead.getId(), lead);
 
@@ -66,35 +34,9 @@ public class Main {
 
                 int idLead = Integer.parseInt(orderSplit[1]);
                 if (leads.containsKey(idLead)){
-                /*String name = leads.get(idLead).getName();
-                String phoneNumber = leads.get(idLead).getPhoneNumber();
-                String email = leads.get(idLead).getEmail();
-                String companyName = leads.get(idLead).getCompanyName();
-
-                Contact contact = new Contact(name, phoneNumber, email, companyName);*/
 
                     Contact contact = mainMethods.convertLeadtoOpportunity(leads, idLead);
                     contacts.put(contact.getId(), contact);
-
-                /*System.out.println("Please specify your interests: (Options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
-                String typeTruck = scan.nextLine();
-                while (!typeTruck.toUpperCase().equals("HYBRID TRUCK") && !typeTruck.toUpperCase().equals("FLATBED TRUCK") && !typeTruck.toUpperCase().equals("BOX TRUCK")){
-                    System.out.println("ConsoleColors.RED + NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
-                    typeTruck = scan.nextLine();
-                }
-
-                System.out.println("Please specify quantity of trucks you need: (Introduce a number)");
-                String trucksQuantity = scan.nextLine();
-                int trucksNum = Integer.parseInt(trucksQuantity);
-
-                Opportunity opportunity;
-                if (typeTruck.equals("HYBRID TRUCK")){
-                    opportunity = new Opportunity(Product.HYBRID, trucksNum, contact);
-                } else if (typeTruck.equals("FLATBED TRUCK")){
-                    opportunity = new Opportunity(Product.FLATBED, trucksNum, contact);
-                } else {
-                    opportunity = new Opportunity(Product.BOX, trucksNum, contact);
-                }*/
 
                     Opportunity opportunity = mainMethods.convertLeadtoLead(contact);
                     opportunities.put(opportunity.getId(), opportunity);
@@ -109,48 +51,26 @@ public class Main {
 
             }
             else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[2])){
-                    /*int idOportunity = Integer.parseInt(orderSplit[2]);
-                    if (opportunities.containsKey(idOportunity)){
-                    System.out.println(opportunities.get(idOportunity).toString());}
-                    else {
-                        System.out.println(ConsoleColors.RED +"Opportunity Id is not valid");
-                    }*/
+
                 mainMethods.lookupOpportunity(orderSplit, opportunities);
             }
 
             else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[3])){
-                    /*int idLead = Integer.parseInt(orderSplit[2]);
-                    if (leads.containsKey(idLead)){
-                    System.out.println(leads.get(idLead).toString());}
-                    else {
-                        System.out.println(ConsoleColors.RED +"Lead Id is not valid");
-                    }*/
+
                 mainMethods.lookupLead(orderSplit, leads);
             }
 
             else if (order.toUpperCase().equals(keyPhrases[4])){
-                /*for (int idLead : leads.keySet()){
-                    System.out.println(leads.get(idLead).toString());
-                }*/
+
                 mainMethods.showLeads(leads);
 
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[5])){
-                /*int idOpportunity = Integer.parseInt(orderSplit[1]);
-                if (opportunities.containsKey(idOpportunity)){
-                opportunities.get(idOpportunity).setStatus(Status.CLOSED_LOST);}
-                else {
-                    System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
-                }*/
+
                 mainMethods.closeLost(orderSplit, opportunities);
             }
             else if (orderSplit[0].toUpperCase().equals(keyPhrases[6])){
-                /*int idOpportunity = Integer.parseInt(orderSplit[1]);
-                if (opportunities.containsKey(idOpportunity)){
-                opportunities.get(idOpportunity).setStatus(Status.CLOSED_WON);}
-                else {
-                    System.out.println(ConsoleColors.RED +"Opportunity id is not valid");
-                }*/
+
                 mainMethods.closeWon(orderSplit, opportunities);
             }
             else {
@@ -159,19 +79,9 @@ public class Main {
             else{
                 System.out.println(ConsoleColors.RED +"COMAND NOT FOUND");
             }
-            order = whatNext();
+            order = mainMethods.whatNext();
             orderSplit = order.split(" ");
         }
-    }
-
-    public static String whatNext(){
-        String[] keyPhrases = new String[]{"NEW LEAD", "CONVERT + ID", "LOOKUP LEAD + ID", "LOOKUP OPPORTUNITY + ID", "SHOW LEADS", "CLOSE-LOST + ID", "CLOSE-WON + ID"};
-        Scanner scan = new Scanner(System.in);
-        System.out.println(ConsoleColors.BLUE +"What do you want to do next? " + Arrays.toString(keyPhrases));
-        System.out.println(ConsoleColors.GREEN + "(Write 'EXIT' to close terminal)");
-        String order = scan.nextLine();
-        String[] orderSplit = order.split(" ");
-        return order;
     }
 }
 
