@@ -16,14 +16,14 @@ public class MainMethods {
         String nameLead="";
         String phoneNumber;
         String email;
-        boolean isValid = true;
+        boolean isValid = false;
 
         while(!isValid){
-            System.out.println(ConsoleColors.BLUE+"Please specify your city");
+            System.out.println(ConsoleColors.BLUE+"Please specify the name of the lead");
             nameLead = scan.nextLine();
             isValid = nameLead.matches("[a-zA-Z]+");
             if(!isValid){
-                System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
+                System.out.println(ConsoleColors.RED+"The name of the lead is not valid. Can contain only letters");
             }
         }
 
