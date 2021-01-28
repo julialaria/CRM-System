@@ -1,6 +1,7 @@
 package classes;
 
 import enums.Industry;
+
 import java.util.List;
 
 public class Account {

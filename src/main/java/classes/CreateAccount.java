@@ -13,7 +13,7 @@ public class CreateAccount {
     private static final Scanner sc = new Scanner(System.in);
 
     public static Account create(Contact contact, Opportunity opportunity) {
-        System.out.println(ConsoleColors.BLUE+"We are going to create an Account");
+        System.out.println(ConsoleColors.BLUE + "We are going to create an Account");
 
         Industry industry = enterCorrectIndustry(sc);
         int employees = getEmployees(sc);
@@ -25,15 +25,15 @@ public class CreateAccount {
     }
 
     public static String getCountry(Scanner scanner) {
-        String country="";
+        String country = "";
         boolean isValid = false;
 
-        while(!isValid){
-            System.out.println(ConsoleColors.BLUE+"Please specify your country");
+        while (!isValid) {
+            System.out.println(ConsoleColors.BLUE + "Please specify your country");
             country = scanner.nextLine();
             isValid = country.matches("[a-zA-Zñ]+");
-            if(!isValid){
-                System.out.println(ConsoleColors.RED+"The country must be written and can not have numbers");
+            if (!isValid) {
+                System.out.println(ConsoleColors.RED + "The country must be written and can not have numbers");
             }
         }
 
@@ -41,15 +41,15 @@ public class CreateAccount {
     }
 
     public static String getCity(Scanner scanner) {
-        String city="";
+        String city = "";
         boolean isValid = false;
 
-        while(!isValid){
-            System.out.println(ConsoleColors.BLUE+"Please specify your city");
+        while (!isValid) {
+            System.out.println(ConsoleColors.BLUE + "Please specify your city");
             city = scanner.nextLine();
             isValid = city.matches("[a-zA-Zñ]+");
-            if(!isValid){
-                System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
+            if (!isValid) {
+                System.out.println(ConsoleColors.RED + "The city must be written and can not have numbers");
             }
         }
         return city;
@@ -57,7 +57,7 @@ public class CreateAccount {
     }
 
     public static int getEmployees(Scanner scanner) {
-        System.out.println(ConsoleColors.BLUE+ "Please specify your employee count");
+        System.out.println(ConsoleColors.BLUE + "Please specify your employee count");
         int employees = 0;
         boolean isValidemployees = false;
         while (!isValidemployees) {
@@ -67,16 +67,16 @@ public class CreateAccount {
             } catch (Exception e) {
             }
             if (!isValidemployees) {
-                System.out.println(ConsoleColors.RED+ "Specify a correct number > 0");
+                System.out.println(ConsoleColors.RED + "Specify a correct number > 0");
             }
         }
         return employees;
     }
 
     public static Industry enterCorrectIndustry(Scanner scanner) {
-        System.out.println(ConsoleColors.BLUE+"Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
+        System.out.println(ConsoleColors.BLUE + "Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
         String typeAccount = scanner.nextLine().toUpperCase(Locale.ROOT);
-        while (!isCorrectIndustry(typeAccount)){
+        while (!isCorrectIndustry(typeAccount)) {
             typeAccount = scanner.nextLine().toUpperCase(Locale.ROOT);
         }
         return Industry.valueOf(typeAccount);

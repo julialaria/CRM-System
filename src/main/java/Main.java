@@ -6,8 +6,6 @@ import java.util.*;
 
 public class Main {
 
-    private Product product;
-
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println(ConsoleColors.BLUE_BACKGROUND + "\n WELCOME TO CRM-SYSTEM \n");
