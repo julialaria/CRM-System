@@ -1,7 +1,7 @@
 # CRM-System By Code Warriors
 
-## Class diagram of the project:
-![alt text](https://github.com/julialaria/CRM-System/blob/main/Diagrams/ClassDiagram.jpg)
+## Class Diagram:
+![Class Diagram](doc/diagrams/ClassDiagram.jpg)
 
-## Use case diagram of the project:
-![alt text](https://github.com/julialaria/CRM-System/blob/main/Diagrams/UseCaseDiagrams.jpg)
+## Use Case Diagram:
+![Use Case Diagram](doc/diagrams/UseCaseDiagrams.jpg)
