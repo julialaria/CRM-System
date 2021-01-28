@@ -31,7 +31,7 @@ public class CreateAccount {
         while(!isValid){
             System.out.println(ConsoleColors.BLUE+"Please specify your country");
             country = scanner.nextLine();
-            isValid = country.matches("[a-zA-Z]+");
+            isValid = country.matches("[a-zA-Zñ]+");
             if(!isValid){
                 System.out.println(ConsoleColors.RED+"The country must be written and can not have numbers");
             }
@@ -47,7 +47,7 @@ public class CreateAccount {
         while(!isValid){
             System.out.println(ConsoleColors.BLUE+"Please specify your city");
             city = scanner.nextLine();
-            isValid = city.matches("[a-zA-Z]+");
+            isValid = city.matches("[a-zA-Zñ]+");
             if(!isValid){
                 System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
             }
