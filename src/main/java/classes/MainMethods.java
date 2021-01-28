@@ -88,8 +88,9 @@ public class MainMethods {
     }
 
     public static void showLeads(Map<Integer, Lead> leads){
+        System.out.println("LEAD ID || LEAD NAME");
         for (int idLead : leads.keySet()){
-            System.out.println(leads.get(idLead).toString());
+            System.out.println(leads.get(idLead).shortPrint());
         }
     }
 

@@ -86,4 +86,8 @@ public class Lead {
                 " and belongs to the company '" + companyName + '\'' +
                 '}';
     }
+
+    public String shortPrint() {
+        return id + " || " + name;
+    }
 }
