@@ -143,7 +143,7 @@ public class CreateAccount {
         System.out.println(ConsoleColors.BLUE+"Please specify your industry: (Options: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER')");
         String typeAccount = scanner.nextLine().toUpperCase(Locale.ROOT);
         while (!isCorrectIndustry(typeAccount)){
-            typeAccount = scanner.nextLine();
+            typeAccount = scanner.nextLine().toUpperCase(Locale.ROOT);
         }
         return Industry.valueOf(typeAccount);
 
@@ -155,7 +155,7 @@ public class CreateAccount {
                 return true;
             }
         }
-        System.out.println(ConsoleColors.RED +"Incorrect value, Correct values are: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER'");
+        System.out.println(ConsoleColors.RED + "Incorrect value, Correct values are: 'PRODUCE', 'ECOMMERCE', 'MANUFACTURING','MEDICAL','OTHER'");
         return false;
     }
 

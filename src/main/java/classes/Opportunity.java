@@ -22,45 +22,6 @@ public class Opportunity {
         id++;
     }
 
-    public static Opportunity convertLeadToOpportunity (Lead lead, Product product, int quantity, Contact decisionMaker){
-
-        if (quantity <= 0) {
-
-            throw new IllegalArgumentException("Please, enter a valid number");
-        }
-
-        return new Opportunity (product, quantity, decisionMaker);
-    }
-
-    public static void changeOpportunityStatus (Opportunity opportunity, int oneTwo){
-
-
-        if (oneTwo <1 || oneTwo > 2){
-
-            throw new IllegalArgumentException("Please, enter a valid number");
-        }
-
-
-        if (oneTwo == 1){
-
-            opportunity.setStatus(Status.CLOSED_WON);
-
-        }
-
-        if (oneTwo ==2){
-
-            opportunity.setStatus(Status.CLOSED_LOST);
-        }
-
-
-    }
-
-    public static void lookUpOpportunity (Opportunity opportunity){
-
-        System.out.println(opportunity.toString());
-
-    }
-
     @Override
     public String toString() {
 

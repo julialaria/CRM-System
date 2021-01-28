@@ -1,6 +1,7 @@
 package classes;
 
 import org.apache.commons.validator.routines.EmailValidator;
+import styles.ConsoleColors;
 
 public class Lead {
     private int id;
@@ -25,7 +26,7 @@ public class Lead {
 
     public static boolean isEmailValid(String email){
         if(!EmailValidator.getInstance().isValid(email)){
-            throw new IllegalArgumentException("The email address format is not valid.");
+            throw new IllegalArgumentException(ConsoleColors.RED+ "The email address format is not valid.");
         } else{
             return true;
         }
@@ -40,7 +41,7 @@ public class Lead {
             } else if (phoneNumber.matches("\\d{3}[-\\.\\s]\\d{2}[-\\.\\s]\\d{2}[-\\.\\s]\\d{2}")){
 
             } else {
-                throw new IllegalArgumentException("The phone number must be 9 digits in accordance with the following format:" +
+                throw new IllegalArgumentException(ConsoleColors.RED + "The phone number must be 9 digits in accordance with the following format:" +
                         " 612345678 / 612-345-678 / 612 345 678 / 612 34 56 78");
             }
         return result;

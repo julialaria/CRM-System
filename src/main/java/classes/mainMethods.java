@@ -135,7 +135,10 @@ public class mainMethods {
     }
 
     public static void lookupOpportunity(String[] orderSplit, Map<Integer, Opportunity> opportunities){
-        int idOportunity = Integer.parseInt(orderSplit[2]);
+        int idOportunity=Integer.parseInt(orderSplit[2]);
+
+        System.out.println(ConsoleColors.RED + "You must introduce an Id");
+
         if (opportunities.containsKey(idOportunity)){
             System.out.println(opportunities.get(idOportunity).toString());}
         else {

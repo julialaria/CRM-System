@@ -35,7 +35,7 @@ class mainMethodsTest {
     }
 
     @Test
-    void closeWon() {
+    public void closeWon() {
     }
 
     @Test

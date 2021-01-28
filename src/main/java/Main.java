@@ -55,12 +55,12 @@ public class Main {
                 }
 
             }
-            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[2])){
+            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[2])&&orderSplit.length>2){
 
                 mainMethods.lookupOpportunity(orderSplit, opportunities);
             }
 
-            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[3])){
+            else if ((orderSplit[0]+" "+orderSplit[1]).toUpperCase().equals(keyPhrases[3])&&orderSplit.length>2){
 
                 mainMethods.lookupLead(orderSplit, leads);
             }
