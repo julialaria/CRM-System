@@ -49,7 +49,7 @@ public class Lead {
 
     public void printInfo(){
         System.out.println("Lead with id= " + id +
-                ",with name='" + name + '\'' +
+                ",with name " + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 " and companyName='" + companyName + '\'' +
@@ -79,11 +79,11 @@ public class Lead {
 
     @Override
     public String toString() {
-        return "Lead with id = " + id +
-                " whose name is '" + name + '\'' +
-                " has the following phone number '" + phoneNumber + '\'' +
-                ", email address'" + email + '\'' +
-                " and belongs to the company '" + companyName ;
+        return "Lead with id  " + id +
+                " whose name is " + name + '\'' +
+                " has the following phone number " + phoneNumber + '\'' +
+                ", email address " + email + '\'' +
+                " and belongs to the company " + companyName ;
     }
 
     public String shortPrint() {

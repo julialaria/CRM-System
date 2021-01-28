@@ -62,8 +62,8 @@ public class Account {
         return "Account with id "  + id +
                 " belongs to " + industry +
                 " industry, has " + employeeCount +
-                " employees, is based on '" + city + '\'' +
-                ", '" + country + '\'' +
+                " employees, is based on " + city + '\'' +
+                ", " + country + '\'' +
                 " with contact List " + contactList +
                 " and opportunity List " + opportunityList ;
     }

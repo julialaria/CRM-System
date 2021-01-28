@@ -26,7 +26,7 @@ public class Opportunity {
     public String toString() {
 
         return "Opportunity with product " + product +
-                ", quantity=" + quantity +
+                ", quantity = " + quantity +
                 ", decision maker contact id is " + decisionMaker.getIdContact() +
                 " and its status is " + status ;
     }
