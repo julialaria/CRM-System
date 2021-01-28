@@ -25,99 +25,33 @@ public class CreateAccount {
     }
 
     public static String getCountry(Scanner scanner) {
-
         String country="";
-        boolean aux = true;
+        boolean isValid = false;
 
-        while(aux){
-            System.out.println(ConsoleColors.BLUE+"Please specify your country");
-            country = scanner.nextLine();
-            aux = false;
-
-            if (country.indexOf('1')!=-1 || country==""){
-                aux=true;
-            }
-            if (country.indexOf('2')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('3')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('4')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('5')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('6')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('7')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('8')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('9')!=-1){
-                aux=true;
-            }
-            if (country.indexOf('0')!=-1){
-                aux=true;
-            }
-            if (aux==true){
-                System.out.println(ConsoleColors.RED+"The country must be written and can not have numbers");
-            }
-        }
-
-        return country;
-
-    }
-
-    public static String getCity(Scanner scanner) {
-
-        String city="";
-        boolean aux = true;
-
-        while(aux){
+        while(!isValid){
             System.out.println(ConsoleColors.BLUE+"Please specify your city");
-            city = scanner.nextLine();
-            aux = false;
-
-            if (city.indexOf('1')!=-1 || city==""){
-                aux=true;
-            }
-            if (city.indexOf('2')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('3')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('4')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('5')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('6')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('7')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('8')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('9')!=-1){
-                aux=true;
-            }
-            if (city.indexOf('0')!=-1){
-                aux=true;
-            }
-            if (aux==true){
+            country = scanner.nextLine();
+            isValid = country.matches("[a-zA-Z]+");
+            if(!isValid){
                 System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
             }
         }
 
+        return country;
+    }
+
+    public static String getCity(Scanner scanner) {
+        String city="";
+        boolean isValid = false;
+
+        while(!isValid){
+            System.out.println(ConsoleColors.BLUE+"Please specify your city");
+            city = scanner.nextLine();
+            isValid = city.matches("[a-zA-Z]+");
+            if(!isValid){
+                System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
+            }
+        }
         return city;
 
     }

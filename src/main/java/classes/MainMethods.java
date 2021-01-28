@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 
-public class mainMethods {
+public class MainMethods {
 
     public static Lead newLead(){
 
@@ -16,45 +16,14 @@ public class mainMethods {
         String nameLead="";
         String phoneNumber;
         String email;
-        boolean aux = true;
+        boolean isValid = true;
 
-        while(aux){
-            System.out.println(ConsoleColors.BLUE+"Introduce name of the Lead");
+        while(!isValid){
+            System.out.println(ConsoleColors.BLUE+"Please specify your city");
             nameLead = scan.nextLine();
-            aux = false;
-
-            if (nameLead.indexOf('1')!=-1 || nameLead==""){
-                aux=true;
-            }
-            if (nameLead.indexOf('2')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('3')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('4')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('5')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('6')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('7')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('8')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('9')!=-1){
-                aux=true;
-            }
-            if (nameLead.indexOf('0')!=-1){
-                aux=true;
-            }
-            if (aux==true){
-                System.out.println(ConsoleColors.RED+"The name of the Lead must be written and can not have numbers");
+            isValid = nameLead.matches("[a-zA-Z]+");
+            if(!isValid){
+                System.out.println(ConsoleColors.RED+"The city must be written and can not have numbers");
             }
         }
 
