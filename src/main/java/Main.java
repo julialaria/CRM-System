@@ -35,10 +35,10 @@ public class Main {
 
                     if (leads.containsKey(idLead) && orderSplit.length == 2){
 
-                        Contact contact = MainMethods.convertLeadtoOpportunity(leads, idLead);
+                        Contact contact = MainMethods.convertLeadToContact(leads, idLead);
                         contacts.put(contact.getId(), contact);
 
-                        Opportunity opportunity = MainMethods.convertLeadtoLead(contact);
+                        Opportunity opportunity = CreateOpportunity.create(contact);
                         opportunities.put(opportunity.getId(), opportunity);
 
                         Account account = CreateAccount.create(contact,opportunity);

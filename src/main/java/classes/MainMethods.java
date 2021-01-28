@@ -57,7 +57,7 @@ public class MainMethods {
         return lead;
     }
 
-    public static Contact convertLeadtoOpportunity(Map<Integer, Lead> leads, int idLead){
+    public static Contact convertLeadToContact(Map<Integer, Lead> leads, int idLead){
 
         String name = leads.get(idLead).getName();
         String phoneNumber = leads.get(idLead).getPhoneNumber();
@@ -66,41 +66,6 @@ public class MainMethods {
 
         Contact contact = new Contact(name, phoneNumber, email, companyName);
         return contact;
-    }
-
-    public static Opportunity convertLeadtoLead(Contact contact){
-        System.out.println(ConsoleColors.BLUE+"Please specify your interests: (Options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
-        Scanner scan = new Scanner(System.in);
-        String typeTruck = scan.nextLine();
-        while (!typeTruck.toUpperCase().equals("HYBRID TRUCK") && !typeTruck.toUpperCase().equals("FLATBED TRUCK") && !typeTruck.toUpperCase().equals("BOX TRUCK")){
-            System.out.println(ConsoleColors.RED + "NOT AVAILABLE TYPE HAS BEEN INTRODUCED (Valid options: 'HYBRID TRUCK', 'FLATBED TRUCK', 'BOX TRUCK')");
-            typeTruck = scan.nextLine();
-        }
-        int trucksNum;
-        while(true){
-            System.out.println(ConsoleColors.BLUE+"Please specify quantity of trucks you need: (Introduce a number)");
-            try{
-                String trucksQuantity = scan.nextLine();
-                trucksNum = Integer.parseInt(trucksQuantity);
-                if (trucksNum>=0){
-                    break;
-                }else{
-                    System.out.println(ConsoleColors.RED+"Please introduce a valid number");
-                }
-            }catch(IllegalArgumentException e){
-                System.out.println(ConsoleColors.RED + "Please introduce a valid number");
-            }
-        }
-
-        Opportunity opportunity;
-        if (typeTruck.equals("HYBRID TRUCK")){
-            opportunity = new Opportunity(Product.HYBRID, trucksNum, contact);
-        } else if (typeTruck.equals("FLATBED TRUCK")){
-            opportunity = new Opportunity(Product.FLATBED, trucksNum, contact);
-        } else {
-            opportunity = new Opportunity(Product.BOX, trucksNum, contact);
-        }
-        return opportunity;
     }
 
     public static void lookupOpportunity(String[] orderSplit, Map<Integer, Opportunity> opportunities){
