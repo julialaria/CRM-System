@@ -57,9 +57,9 @@ class CreateAccountTest {
 
     @Test
     void create_correct_country_on_account() {
-        String country = getCountry(new Scanner("España"));
+        String country = getCountry(new Scanner("Francia"));
 
-        assertEquals("España", country);
+        assertEquals("Francia", country);
     }
 
     @Test
