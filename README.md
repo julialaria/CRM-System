@@ -13,14 +13,14 @@ CRM will help you:
 
 - Associate contacts with an opportunity.
 
-With this application you will be able to carry out an exhaustive market analysis. You can see, for example, which are the best-selling products, or in which city or country the most orders have been placed. In addition, you will also be able to know the number of successful sales that salesreps have had, among many other options. This type of analysis will undoubtedly help you to be sure of your next steps in the market.
+*With this application you will be able to carry out an exhaustive market analysis. You can see, for example, which are the best-selling products, or in which city or country the most orders have been placed. In addition, you will also be able to know the number of successful sales that salesreps have had, among many other options. This type of analysis will undoubtedly help you to be sure of your next steps in the market*.
 
 The application instructions are detailed below:
 
 At the beginning, if the user does not know which commands are available, he can enter COMMANS HELP via the console. A list like this will be displayed:
 
 ## COMMAND HELP
-![commandshelp1](doc/commandshelp1.png)
+![commandshelp1](doc/commandshelp1.jpg)
 
 
 ---**GENERAL COMMANDS**---
