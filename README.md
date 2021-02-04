@@ -19,8 +19,12 @@ The application instructions are detailed below:
 
 At the beginning, if the user does not know which commands are available, he can enter COMMANS HELP via the console. A list like this will be displayed:
 
-## COMMANDS HELP1
+## COMMANDS HELP
 ![commandshelp1](https://github.com/julialaria/CRMDataLayer/blob/develop/doc/commandshelp1.jpg?raw=true)
+
+## COMMANDS HELP
+![commandshelp1](https://github.com/julialaria/CRMDataLayer/blob/develop/doc/commandshelp2.jpg?raw=true)
+
 
 
 ---**GENERAL COMMANDS**---
