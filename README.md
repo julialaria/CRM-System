@@ -23,7 +23,7 @@ At the beginning, if the user does not know which commands are available, he can
 ![commandshelp1](doc/commandshelp1.png)
 
 
-----------------------------------------------------------------**GENERAL COMMANDS**---------------------------------------------------------------------------------------------
+                                                                  ---**GENERAL COMMANDS**---
 
 
 The very first order will always be to create a **new lead (NEW LEAD)**, as this is the way to obtain a new customer. To create this lead, the user will be asked to enter their name, telephone number, email and the company to which the lead belongs.To finish creating our  **new lead**, we must indicate our salesrep id. These variables must be entered in the appropriate format, which will be indicated in case of incorrect input.
