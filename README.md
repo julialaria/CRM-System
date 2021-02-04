@@ -99,16 +99,14 @@ In this section you can make a series of queries based on the position of the sa
 **MAX EMPLOYEECOUNT** -- the maximum number of employees of all the registered companies
 **MIN EMPLOYEECOUNT** -- the minimum number of employees of all the registered companies
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------**QUANTITY STATES**----------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **MEAN QUANTITY** -- mean quanitity of products ordered 
 **MEDIAN QUANTITY** -- median quanitity of products ordered
 **MAX QUANTITY** -- maximum quanitity of products ordered
 **MIN QUANTITY** -- minimum quanitity of products ordered
 
---**OPPORTUNITY STATES**--
+--**OPPORTUNITY STATES**---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **MEAN OPPS PER ACCOUNT** -- mean number of Opportunities associated with an Account
 **MEDIAN OPPS PER ACCOUNT** -- median number of Opportunities associated with an Account
