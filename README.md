@@ -22,9 +22,9 @@ At the beginning, if the user does not know which commands are available, he can
 ## COMMAND HELP
 ![commandshelp1](doc/commandshelp1.png)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------**GENERAL COMMANDS**---------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 The very first order will always be to create a **new lead (NEW LEAD)**, as this is the way to obtain a new customer. To create this lead, the user will be asked to enter their name, telephone number, email and the company to which the lead belongs.To finish creating our  **new lead**, we must indicate our salesrep id. These variables must be entered in the appropriate format, which will be indicated in case of incorrect input.
 
@@ -40,9 +40,9 @@ Once the customer has decided if he/she is interested in buying the products, th
 
 In **GENERAL COMMANDS** you will also find the option to create a **NEW SALESREP**. To create this salesrep, the user will by asked to enter the name of this salesrep. Finally, you could also see all the salesrepsthat has already been created by entering **SHOW SALESREP**. 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------**BY SALESREP**--------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 In this section you can make a series of queries based on the position of the sales rep: 
 
@@ -52,9 +52,9 @@ In this section you can make a series of queries based on the position of the sa
 **REPORT CLOSED-LOST BY SALESREP**-- count of all CLOSED_LOST Opportunities by SalesRep
 **REPORT OPEN BY SALESREP**-- count of all OPEN Opportunities by SalesRep
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------**BY PRODUCT**---------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 **REPORT OPPORTUNITY BY PRODUCT**-- count of all Opportunities by product
 **REPORT CLOSED-WON BY PRODUCT** -- count of all CLOSED_WON Opportunities by product
@@ -62,9 +62,7 @@ In this section you can make a series of queries based on the position of the sa
 **REPORT OPEN BY PRODUCT** -- count of all OPEN Opportunities by product
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------**BY COUNTRY**---------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **REPORT OPPORTUNITY BY COUNTRY** -- count of all Opportunities by country
 **REPORT CLOSED-WON BY COUNTRY** -- count of all CLOSED_WON Opportunities by country
@@ -72,27 +70,23 @@ In this section you can make a series of queries based on the position of the sa
 **REPORT OPEN BY COUNTRY** -- count of all OPEN Opportunities by country
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------**BY CITY**------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **REPORT OPPORTUNITY BY CITY** -- count of all Opportunities by city
 **REPORT CLOSED-WON BY CITY** -- count of all CLOSED_WON Opportunities by city
 **REPORT CLOSED-LOST BY CITY** -- count of all CLOSED_LOST Opportunities by city
 **REPORT OPEN BY CITY** -- count of all OPEN Opportunities by city
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------**BY INDUSTRY**--------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **REPORT OPPORTUNITY BY INDUSTRY** -- count of all Opportunities by industry
 **REPORT CLOSED-WON BY INDUSTRY** -- count of all CLOSED_WON Opportunities by industry
 **REPORT CLOSED-LOST BY INDUSTRY** -- count of all CLOSED_LOST Opportunities by industry
 **REPORT OPEN BY INDUSTRY** -- count of all OPEN Opportunities by industry
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------**EMPLOYEECOUNT STATES**-----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **MEAN EMPLOYEECOUNT** -- the average number of employees of all the registered companies 
 **MEDIAN EMPLOYEECOUNT** -- the median number of employees of all the registered companies
@@ -106,7 +100,7 @@ In this section you can make a series of queries based on the position of the sa
 **MAX QUANTITY** -- maximum quanitity of products ordered
 **MIN QUANTITY** -- minimum quanitity of products ordered
 
---**OPPORTUNITY STATES**---------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------**OPPORTUNITY STATES**--------------------------------------------------------------------------------------------
 
 **MEAN OPPS PER ACCOUNT** -- mean number of Opportunities associated with an Account
 **MEDIAN OPPS PER ACCOUNT** -- median number of Opportunities associated with an Account
