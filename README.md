@@ -41,8 +41,7 @@ Once the customer has decided if he/she is interested in buying the products, th
 In **GENERAL COMMANDS** you will also find the option to create a **NEW SALESREP**. To create this salesrep, the user will by asked to enter the name of this salesrep. Finally, you could also see all the salesrepsthat has already been created by entering **SHOW SALESREP**. 
 
 
-----------------------------------------------------------------**BY SALESREP**--------------------------------------------------------------------------------------------------
-
+----------------------------------------------------------------**BY SALESREP**------------------------------------------------------------------------------------
 
 In this section you can make a series of queries based on the position of the sales rep: 
 
