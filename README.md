@@ -21,8 +21,6 @@ At the beginning, if the user does not know which commands are available, he can
 
 ## COMMANDS HELP
 ![commandshelp1](https://github.com/julialaria/CRMDataLayer/blob/develop/doc/commandshelp1.jpg?raw=true)
-
-## COMMANDS HELP
 ![commandshelp1](https://github.com/julialaria/CRMDataLayer/blob/develop/doc/commandshelp2.jpg?raw=true)
 
 
