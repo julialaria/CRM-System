@@ -108,7 +108,7 @@ In this section you can make a series of queries based on the position of the sa
 **MAX QUANTITY** -- maximum quanitity of products ordered
 **MIN QUANTITY** -- minimum quanitity of products ordered
 
-**OPPORTUNITY STATES**
+--**OPPORTUNITY STATES**--
 
 **MEAN OPPS PER ACCOUNT** -- mean number of Opportunities associated with an Account
 **MEDIAN OPPS PER ACCOUNT** -- median number of Opportunities associated with an Account
