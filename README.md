@@ -18,7 +18,7 @@ The application instructions are detailed below:
 1) At the beginning, if the user does not know which commands are available, he can enter COMMANS HELP via the console. A list like this will be displayed:
 
 ## COMMAND HELP
-![Command Help](doc/commandshelp1.PNG)
+![commandshelp1](doc/commandshelp1.PNG)
 
 
 The very first order will always be to create a **new lead (NEW LEAD)**, as this is the way to obtain a new customer. To create this lead, the user will be asked to enter their name, telephone number, email and the company to which the lead belongs. These variables must be entered in the appropriate format, which will be indicated in case of incorrect input.
